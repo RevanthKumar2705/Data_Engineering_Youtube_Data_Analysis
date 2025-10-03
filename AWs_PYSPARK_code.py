@@ -5,7 +5,7 @@ from pyspark.context import SparkContext
 from awsglue.context import GlueContext
 from awsglue.job import Job
 
-############################### Added by Carlos ###############################
+#############################################################
 from awsglue.dynamicframe import DynamicFrame
 
 
@@ -21,7 +21,7 @@ job.init(args['JOB_NAME'], args)
 ## @args: [database = "db_youtube_raw", table_name = "raw_statistics", transformation_ctx = "datasource0"]
 ## @return: datasource0
 ## @inputs: []
-############################### Added by Darshil ###############################
+###############################
 predicate_pushdown = "region in ('ca','gb','us')"
 
 datasource0 = glueContext.create_dynamic_frame.from_catalog(database = "db_youtube_raw", table_name = "raw_statistics", transformation_ctx = "datasource0", push_down_predicate = predicate_pushdown)
